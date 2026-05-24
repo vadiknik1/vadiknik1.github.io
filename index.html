@@ -30,15 +30,56 @@
         h1 { margin: 0; color: #2c3e50; font-size: 2.2em; }
         h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; display: inline-block; }
         h3 { color: #34495e; margin-top: 25px; }
-        .portfolio-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .portfolio-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px; }
         
+        /* Твій клас для звичайних кнопок */
         .btn-portfolio {
             display: inline-block; padding: 12px 24px; background-color: #3498db; color: white;
             text-decoration: none; font-weight: bold; border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.2s; text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
         }
         .btn-portfolio:hover { background-color: #2980b9; transform: translateY(-2px); }
+        
+        /* СТИЛІ ДЛЯ ВИПАДАЮЧОГО МЕНЮ */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+            z-index: 1;
+            border-radius: 5px;
+            margin-top: 5px;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: #333333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.2s, color 0.2s;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        /* Показувати меню при наведенні мишки */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
         footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ecf0f1; font-size: 0.9em; color: #7f8c8d; }
     </style>
 </head>
@@ -64,7 +105,7 @@
             </header>
 
             <section id="portfolio">
-                <h2>Портфоліо робіт</h2>
+                <h2>Портфоліо виконаних робіт</h2>
                 
                 <h3>Лабораторні роботи (ЛР):</h3>
                 <div class="portfolio-links">
@@ -75,8 +116,15 @@
 
                 <h3>Практичні роботи (ПР):</h3>
                 <div class="portfolio-links">
-                    <a href="lemon.html" target="_blank" class="btn-portfolio">Практична робота "Лимон"</a>
-                    <a href="cossacs.html" target="_blank" class="btn-portfolio">Практична робота "Мрія"</a>
+                    
+                    <div class="dropdown">
+                        <button class="btn-portfolio">Практична робота №2 ▼</button>
+                        <div class="dropdown-content">
+                            <a href="lemon/index.html" target="_blank">• ПР "Лимон" (CSS)</a>
+                            <a href="mriya/cossacs.html" target="_blank">• ПР "Мрія" (Літак)</a>
+                        </div>
+                    </div>
+                    
                 </div>
 
                 <br><br>
